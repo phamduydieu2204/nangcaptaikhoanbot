@@ -2,7 +2,7 @@ from telegram import Update, Bot
 from telegram.ext import Updater, MessageHandler, Filters, CallbackContext
 
 # ==== THÔNG TIN CẤU HÌNH ====
-BOT_TOKEN = "🔑_THAY_BẰNG_TOKEN_BOT_CỦA_BẠN"
+BOT_TOKEN = "7010265367:AAHT8PFy6R2KiiDKd4QTQ7c8iCegY_-dZk4"
 CHAT_ID_B = 8000810390      # Thay bằng chat_id của tài khoản B
 CHAT_ID_C = 1707360759      # Thay bằng chat_id của tài khoản C
 
