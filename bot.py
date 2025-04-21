@@ -18,7 +18,7 @@ ID_HAU = int(os.environ.get("CHAT_ID_HAU"))         # 462516296
 ID_TO_NAME = {
     ID_LINH: "Thùy Linh",
     ID_DIYEU: "Phạm Duy Diệu",
-    ID_HAU: "Nâng Cấp"
+    ID_HAU: "Mr Hậu"
 }
 
 message_map = {}  # (from_id, original_msg_id) => {to_id: forwarded_msg_id}
