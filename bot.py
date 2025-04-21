@@ -21,10 +21,10 @@ async def relay_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     if sender_id == CHAT_ID_B:
         receiver_id = CHAT_ID_C
-        prefix = "💬 B nói:"
+        prefix = "💬 Thùy Linh:"
     elif sender_id == CHAT_ID_C:
         receiver_id = CHAT_ID_B
-        prefix = "💬 C nói:"
+        prefix = "💬 Phạm Duy Diệu:"
     else:
         await update.message.reply_text("❌ Bạn không có quyền sử dụng bot này.")
         return
