@@ -4,9 +4,10 @@ from telegram import Update, Bot
 from telegram.ext import ApplicationBuilder, ContextTypes, MessageHandler, filters
 
 # ==== CẤU HÌNH ====
-BOT_TOKEN = "7010265367:AAHT8PFy6R2KiiDKd4QTQ7c8iCegY_-dZk4"
-CHAT_ID_B = 8000810390
-CHAT_ID_C = 1707360759
+BOT_TOKEN = os.environ.get("BOT_TOKEN")
+CHAT_ID_B = int(os.environ.get("CHAT_ID_B"))
+CHAT_ID_C = int(os.environ.get("CHAT_ID_C"))
+print("BOT_TOKEN from Heroku:", BOT_TOKEN[:10] + "...")
 
 # ==== LOGGING ====
 logging.basicConfig(
