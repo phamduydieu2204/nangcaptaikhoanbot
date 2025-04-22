@@ -3,8 +3,7 @@ from config import USER_NAMES, USER_ROLES, GROUP
 async def forward_message(sender_id, msg, context, edited=False):
     role = USER_ROLES.get(sender_id)
     sender_name = USER_NAMES.get(sender_id, f"ID {sender_id}")
-    prefix = "📩 Đã chỉnh sửa
-" if edited else ""
+    prefix = "📩 Đã chỉnh sửa\\n" if edited else ""
     header = f"{prefix}💬 {sender_name}:"
 
     # Lựa chọn người nhận
