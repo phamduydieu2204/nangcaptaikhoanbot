@@ -15,9 +15,9 @@ async def forward_message(sender_id, msg, context, edited=False):
 
     elif role == "boss":
         text = msg.text or ""
-        msg_text = text.strip()
 
         if msg.reply_to_message:
+            msg_text = text.strip()
             replied_msg = msg.reply_to_message
             replied_sender = replied_msg.from_user.id
             if replied_sender in GROUP and replied_sender != sender_id:
@@ -32,6 +32,7 @@ async def forward_message(sender_id, msg, context, edited=False):
             msg_text = text.replace("#hau", "", 1).replace("#hậu", "", 1).strip()
         else:
             targets = [uid for uid in GROUP if uid != sender_id]
+            msg_text = text.strip()
 
     else:
         return
@@ -41,7 +42,7 @@ async def forward_message(sender_id, msg, context, edited=False):
             if msg.text:
                 reply_to_msg_id = None
                 if msg.reply_to_message:
-                    reply_to_msg_id = msg.message_id
+                    reply_to_msg_id = msg.reply_to_message.message_id
                 await context.bot.send_message(
                     chat_id=target,
                     text=f"{header}\n{msg_text}",
