@@ -1,7 +1,7 @@
 USER_ROLES = {
     1707360759: "boss",     # Phạm Duy Diệu
     8000810390: "staff",    # Thùy Linh
-    462516296: "client"     # Mr Hậu
+    462516296: "client"     # Hậu Chử
 }
 
 USER_NAMES = {

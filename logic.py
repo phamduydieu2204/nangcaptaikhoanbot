@@ -3,7 +3,7 @@ from config import USER_NAMES, USER_ROLES, GROUP
 async def forward_message(sender_id, msg, context, edited=False):
     role = USER_ROLES.get(sender_id)
     sender_name = USER_NAMES.get(sender_id, f"ID {sender_id}")
-    prefix = "📩 Đã chỉnh sửa\\n" if edited else ""
+    prefix = "📩 Đã chỉnh sửa\n" if edited else ""
     header = f"{prefix}💬 {sender_name}:"
 
     # Lựa chọn người nhận
@@ -40,8 +40,7 @@ async def forward_message(sender_id, msg, context, edited=False):
         try:
             if msg.text:
                 text_to_send = msg_text if role == "boss" and 'msg_text' in locals() else msg.text
-                await context.bot.send_message(chat_id=target, text=f"{header}
-{text_to_send}")
+                await context.bot.send_message(chat_id=target, text=f"{header}\n{text_to_send}")
             elif msg.photo:
                 await context.bot.send_photo(chat_id=target, photo=msg.photo[-1].file_id, caption=header)
             elif msg.video:
@@ -51,7 +50,6 @@ async def forward_message(sender_id, msg, context, edited=False):
             elif msg.document:
                 await context.bot.send_document(chat_id=target, document=msg.document.file_id, caption=header)
             else:
-                await context.bot.send_message(chat_id=target, text=f"{header}
-(Loại tin chưa hỗ trợ)")
+                await context.bot.send_message(chat_id=target, text=f"{header}\n(Loại tin chưa hỗ trợ)")
         except Exception as e:
             print(f"Lỗi gửi đến {target}: {e}")
