@@ -1,4 +1,3 @@
-
 from config import USER_NAMES, USER_ROLES, GROUP
 
 async def forward_message(sender_id, msg, context, edited=False):
@@ -7,6 +6,7 @@ async def forward_message(sender_id, msg, context, edited=False):
     prefix = "📩 Đã chỉnh sửa\n" if edited else ""
     header = f"{prefix}💬 {sender_name}:"
 
+    # Lựa chọn người nhận
     if role == "client":
         targets = [uid for uid in GROUP if uid != sender_id]
     elif role == "staff":

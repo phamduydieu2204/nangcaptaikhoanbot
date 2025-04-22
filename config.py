@@ -1,4 +1,3 @@
-
 USER_ROLES = {
     1707360759: "boss",     # Phạm Duy Diệu
     8000810390: "staff",    # Thùy Linh

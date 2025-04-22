@@ -1,4 +1,3 @@
-
 from telegram.ext import ApplicationBuilder
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 import pytz

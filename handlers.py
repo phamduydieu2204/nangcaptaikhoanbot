@@ -1,6 +1,5 @@
-
 from telegram import Update
-from telegram.ext import ContextTypes, MessageHandler, filters, EditedMessageHandler
+from telegram.ext import ContextTypes, MessageHandler, filters
 from config import GROUP
 from logic import forward_message
 
@@ -21,4 +20,4 @@ def register_handlers(app):
         await forward_message(sender_id, msg, context, edited=True)
 
     app.add_handler(MessageHandler(filters.ALL, handle_new))
-    app.add_handler(EditedMessageHandler(handle_edited))
+    app.add_handler(MessageHandler(filters.ALL & filters.UpdateType.EDITED_MESSAGE, handle_edited))
