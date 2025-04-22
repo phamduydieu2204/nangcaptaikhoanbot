@@ -42,8 +42,10 @@ async def forward_message(sender_id, msg, context, edited=False):
         try:
             if msg.text:
                 reply_to_msg_id = None
-                if msg.reply_to_message:
-                    reply_to_msg_id = msg.reply_to_message.message_id
+                if msg.reply_to_message and len(targets) == 1:
+                reply_to_msg_id = msg.reply_to_message.message_id
+            else:
+                reply_to_msg_id = None
                 await context.bot.send_message(
                     chat_id=target,
                     text=f"{header}\n{msg_text}",
