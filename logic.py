@@ -9,9 +9,11 @@ async def forward_message(sender_id, msg, context, edited=False):
     # Lựa chọn người nhận
     if role == "client":
         targets = [uid for uid in GROUP if uid != sender_id]
+        msg_text = msg.text or ""
 
     elif role == "staff":
         targets = [uid for uid in GROUP if uid != sender_id]
+        msg_text = msg.text or ""
 
     elif role == "boss":
         text = msg.text or ""
@@ -33,7 +35,6 @@ async def forward_message(sender_id, msg, context, edited=False):
         else:
             targets = [uid for uid in GROUP if uid != sender_id]
             msg_text = text.strip()
-
     else:
         return
 
